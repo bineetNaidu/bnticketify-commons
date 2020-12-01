@@ -2,10 +2,20 @@
   "name": "@bnticketify/common",
   "version": "0.0.1",
   "description": "NPM package for ticketify as commonly shared codes",
-  "main": "index.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "del ./build/*",
+    "build": "npm run clean && tsc",
+    "publish": "npm version patch && npm run build && npm publish"
   },
   "author": "Bineet Naidu",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "del-cli": "^3.0.1",
+    "typescript": "^4.1.2"
+  }
 }
