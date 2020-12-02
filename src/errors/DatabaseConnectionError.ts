@@ -1,6 +1,6 @@
-import CustomError from './CustomError';
+import { CustomError } from './CustomError';
 
-export default class DatabaseConnectionError extends CustomError {
+export class DatabaseConnectionError extends CustomError {
   reason: string = 'Error connection on Database';
   statusCode: number = 500;
   constructor() {

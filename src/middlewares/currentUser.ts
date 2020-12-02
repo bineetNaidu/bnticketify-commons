@@ -14,7 +14,11 @@ declare global {
   }
 }
 
-const currentUser = (req: Request, res: Response, next: NextFunction) => {
+export const currentUser = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   if (!req.session?.ticketifyJwt) {
     return next();
   }
@@ -22,12 +26,10 @@ const currentUser = (req: Request, res: Response, next: NextFunction) => {
   try {
     const payload = jwt.verify(
       req.session.ticketifyJwt,
-      process.env.JWT_KEY!,
+      process.env.JWT_KEY!
     ) as UserPayload;
     req.currentUser = payload;
   } catch (e) {}
 
   next();
 };
-
-export default currentUser;
