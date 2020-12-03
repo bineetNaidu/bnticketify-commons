@@ -26,7 +26,7 @@ export const currentUser = (
   try {
     const payload = jwt.verify(
       req.session.ticketifyJwt,
-      process.env.JWT_KEY!
+      'qwerty'
     ) as UserPayload;
     req.currentUser = payload;
   } catch (e) {}
