@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "del ./build/*",
     "build": "npm run clean && tsc",
-    "publish": "npm version patch && npm run build && npm publish"
+    "pub": "npm version patch && npm run build && npm publish"
   },
   "author": "Bineet Naidu",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "typescript": "^4.1.2"
   },
   "dependencies": {
-    "@types/cookie-session": "^2.0.41",
+    "@types/cookie-session": "^2.0.42",
     "@types/express": "^4.17.9",
     "@types/jsonwebtoken": "^8.5.0",
     "cookie-session": "^1.4.0",
