@@ -1,6 +1,6 @@
 {
   "name": "@bnticketify/commons",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "NPM package for ticketify as commonly shared codes",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
