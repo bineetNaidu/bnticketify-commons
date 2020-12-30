@@ -1,5 +1,6 @@
 import { Stan, Message } from 'node-nats-streaming';
 import { Subjects } from './Subjects';
+import chalk from 'chalk';
 
 interface Event {
   subject: Subjects;
@@ -34,7 +35,11 @@ export abstract class Listener<T extends Event> {
     );
 
     subscription.on('message', (msg: Message) => {
-      console.log(`Message received: ${this.subject} / ${this.queueGroupName}`);
+      console.log(
+        chalk.green(
+          `Message received: ${this.subject} / ${this.queueGroupName}`
+        )
+      );
 
       const parsedData = this.parseMessage(msg);
       this.onMessage(parsedData, msg);
